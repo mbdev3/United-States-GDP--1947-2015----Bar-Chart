@@ -3,7 +3,7 @@
 
 ### :camera: Preview: 
 
-![Preview](https://projects-preview.s3.eu-west-3.amazonaws.com/United+States+GDP+bar+chart+mbdev.webp)
+![Preview](https://projects-preview.s3.eu-west-3.amazonaws.com/United+States+GDP+bar+chart+mbdev.webp =250x)
 
 :rocket: **Stack:** [D3](https://d3js.org/), [React](https://reactjs.org/)
 
