@@ -3,8 +3,8 @@
 
 ### :camera: Preview: 
 
-![Preview](https://projects-preview.s3.eu-west-3.amazonaws.com/United+States+GDP+bar+chart+mbdev.webp =250x)
 
+<img src="[http://....jpg](https://projects-preview.s3.eu-west-3.amazonaws.com/United+States+GDP+bar+chart+mbdev.webp)" width="200"  />
 :rocket: **Stack:** [D3](https://d3js.org/), [React](https://reactjs.org/)
 
 :hammer: **Module bundler:** [Rollupjs](https://rollupjs.org/guide/en/)
