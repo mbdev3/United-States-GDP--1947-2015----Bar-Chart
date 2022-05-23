@@ -7,7 +7,7 @@
 
 :rocket: **Stack:** [D3](https://d3js.org/), [React](https://reactjs.org/)
 
-:hammer: **Module bandler:** [Rollupjs](https://rollupjs.org/guide/en/)
+:hammer: **Module bundler:** [Rollupjs](https://rollupjs.org/guide/en/)
 
 :page_with_curl: [Data](https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json)
 
