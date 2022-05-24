@@ -1,7 +1,7 @@
 body {
   margin: 0;
   overflow: auto;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@ pre {
 }
 
 .tick line {
-  stroke: #C0C0BB;
+  stroke: #c0c0bb;
 }
 
 .tick text {
@@ -20,14 +20,14 @@ pre {
 }
 
 .mark path {
-  stroke: #BC2E21;
+  stroke: #bc2e21;
   stroke-width: 5;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
 
 .mark rect {
-  fill: #B3c5AE;
+  fill: #b3c5ae;
 }
 
 .mark rect:hover {
@@ -49,36 +49,28 @@ pre {
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  border: 1px solid #635f5d
+  border: 1px solid #635f5d;
 }
 
 #title h1 {
   font-size: 1.75em;
   text-align: center;
-  color: 635f5d;
+  color: #413f3e;
   margin: 0;
   margin-top: 1rem;
+  letter-spacing: 2px;
 }
 
 .copyright {
 
-  display: flex;
-  align-items: center;
-  position: absolute;
-  height: 50px;
-  right: 50px;
-  bottom: 0;
   opacity: 0.75;
   transition: opacity 0.75s ease;
-
 }
 
 .copyright:hover {
-  opacity: 1
+  opacity: 1;
 }
 
 .copyright img {
-  width: 25px;
-  margin-left: 5px;
   cursor: pointer;
 }

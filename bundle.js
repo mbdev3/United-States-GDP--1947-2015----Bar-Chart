@@ -43,20 +43,15 @@
     });
   };
 
-  d3.format('.2s');
   var AxisLeft = function (ref) {
       var yScale = ref.yScale;
       var innerWidth = ref.innerWidth;
 
       return yScale.ticks().map(function (tickValue) { return (
-      React.createElement( 'g', {
-        className: "tick", transform: ("translate(0," + (yScale(
-          tickValue
-        )) + ")") },
+      React.createElement( 'g', { className: "tick", transform: ("translate(0," + (yScale(tickValue)) + ")") },
         React.createElement( 'line', { x2: innerWidth }),
-        React.createElement( 'text', {
-          key: tickValue, style: { textAnchor: 'end' }, x: -5, dy: ".32em" },
-          (tickValue )
+        React.createElement( 'text', { key: tickValue, style: { textAnchor: "end" }, x: -5, dy: ".32em" },
+          tickValue
         )
       )
     ); });
@@ -87,13 +82,13 @@
   );
   };
 
-  var width = window.innerWidth;
-  var height = window.innerHeight;
+  var width = 960;
+  var height = 540;
   var margin = {
-    top: 20,
-    bottom: 150,
-    right: 60,
-    left: 140,
+    top: 30,
+    bottom: 50,
+    right: 10,
+    left: 100,
   };
 
   var App = function () {
@@ -122,7 +117,7 @@
       .range([0, innerWidth]);
 
     var xAxisTickFormat = d3.timeFormat("%Y");
-    d3.timeFormat(" %Y %B");
+
     var gdpFormat = d3.format("s");
     var yScale = d3.scaleLinear()
       .domain([0, d3.max(data, yValue)])
@@ -159,7 +154,7 @@
       xScale(xValue(d));
       var y = yScale(yValue(d));
 
-      e.pageX < window.innerWidth / 2 ? (y -= 50) : y;
+      e.pageX < window.innerWidth / 2 ? (y = y - 25) : y;
 
       tooldiv
         .style("visibility", "visible")
@@ -185,7 +180,8 @@
               React__default["default"].createElement( AxisLeft, { yScale: yScale, innerWidth: innerWidth })
             ),
 
-            React__default["default"].createElement( 'text', { className: "label", textAnchor: "middle", x: innerWidth / 2, y: height - 25 },
+            React__default["default"].createElement( 'text', {
+              className: "label", textAnchor: "middle", transform: ("translate(" + (innerWidth / 2) + "," + (innerHeight + margin.bottom) + ") ") },
               xAxisLabel
             ),
             React__default["default"].createElement( 'text', {
@@ -194,10 +190,13 @@
             ),
             React__default["default"].createElement( Marks, {
               data: data, xScale: xScale, yScale: yScale, xValue: xValue, yValue: yValue, innerHeight: innerHeight, tooltip: function (d) { return d; }, yearsDate: yearsDate, onMouseEnter: function (e, d) { return onMouseEnter(e, d); }, onMouseOut: function (e) { return onMouseOut(); } })
-          )
-        ),
-        React__default["default"].createElement( 'div', { className: "copyright" }, "By ", React__default["default"].createElement( 'a', { href: "https://thembdev.com" },
-            React__default["default"].createElement( 'img', { src: "https://mbdev-utils.s3.eu-west-3.amazonaws.com/mbdev_logo_sm.svg", alt: "mbdev" })
+          ),
+          React__default["default"].createElement( 'g', { className: "copyright", transform: ("translate(" + (width - 35) + "," + (height - 25) + ") ") },
+            React__default["default"].createElement( 'text', { textAnchor: "middle", dx: -15, dy: 18 }, "By"),
+            React__default["default"].createElement( 'a', { href: "https://thembdev.com" },
+              " ",
+              React__default["default"].createElement( 'image', { href: "https://mbdev-utils.s3.eu-west-3.amazonaws.com/mbdev_logo_sm.svg", width: 25 })
+            )
           )
         )
       )

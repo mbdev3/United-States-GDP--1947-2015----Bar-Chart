@@ -1,18 +1,18 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { useData } from "./useData";
 import { AxisBottom } from "./axisBottom";
 import { AxisLeft } from "./axisLeft";
 import { Marks } from "./Marks";
-import { scaleLinear, max, min, format, extent, scaleTime, timeFormat, timeMonths } from "d3";
+import { scaleLinear, max, min, format, scaleTime, timeFormat } from "d3";
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = 960;
+const height = 540;
 const margin = {
-  top: 20,
-  bottom: 150,
-  right: 60,
-  left: 140,
+  top: 30,
+  bottom: 50,
+  right: 10,
+  left: 100,
 };
 
 const App = () => {
@@ -41,7 +41,7 @@ const App = () => {
     .range([0, innerWidth]);
 
   const xAxisTickFormat = timeFormat("%Y");
-  const toolTimeFormat = timeFormat(" %Y %B");
+
   const gdpFormat = format("s");
   const yScale = scaleLinear()
     .domain([0, max(data, yValue)])
@@ -78,7 +78,7 @@ const App = () => {
     let x = xScale(xValue(d));
     let y = yScale(yValue(d));
 
-    e.pageX < window.innerWidth / 2 ? (y -= 50) : y;
+    e.pageX < window.innerWidth / 2 ? (y = y - 25) : y;
 
     tooldiv
       .style("visibility", "visible")
@@ -104,7 +104,11 @@ const App = () => {
             <AxisLeft yScale={yScale} innerWidth={innerWidth} />
           </g>
 
-          <text className="label" textAnchor="middle" x={innerWidth / 2} y={height - 25}>
+          <text
+            className="label"
+            textAnchor="middle"
+            transform={`translate(${innerWidth / 2},${innerHeight + margin.bottom}) `}
+          >
             {xAxisLabel}
           </text>
           <text
@@ -127,13 +131,16 @@ const App = () => {
             onMouseOut={(e) => onMouseOut(e)}
           />
         </g>
+        <g className="copyright" transform={`translate(${width - 35},${height - 25}) `}>
+          <text textAnchor="middle" dx={-15} dy={18}>
+            By
+          </text>
+          <a xlink:href="https://thembdev.com">
+            {" "}
+            <image xlink:href="https://mbdev-utils.s3.eu-west-3.amazonaws.com/mbdev_logo_sm.svg" width={25} />
+          </a>
+        </g>
       </svg>
-      <div className="copyright">
-        By
-        <a href="https://thembdev.com">
-          <img src={"https://mbdev-utils.s3.eu-west-3.amazonaws.com/mbdev_logo_sm.svg"} alt="mbdev" />
-        </a>
-      </div>
     </>
   );
 };
