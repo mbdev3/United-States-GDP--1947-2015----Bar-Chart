@@ -2,24 +2,30 @@ body {
   margin: 0;
   overflow: auto;
   font-family: 'Nunito', sans-serif;
-  display:flex;
-  justify-content:center
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 pre {
   font-size: 7em;
 }
+
 .tick line {
   stroke: #C0C0BB;
 }
+
 .tick text {
   fill: #635f5d;
 }
+
 .mark path {
   stroke: #BC2E21;
   stroke-width: 5;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
+
 .mark rect {
   fill: #B3c5AE;
 }
@@ -33,43 +39,46 @@ pre {
   font-size: 1.75em;
 }
 
- .tooldiv {
+.tooldiv {
   position: absolute;
-  background-color: rgba(179, 197, 174,0.7);
-   font-size:1.1rem;
-   font-weight:700;
-   color: #495057;
+  background-color: rgba(179, 197, 174, 0.7);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #495057;
   visibility: hidden;
-   border-radius:10px;
-   padding:10px;
-   text-align:center;
-   border: 1px solid #635f5d
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #635f5d
 }
-#title h1{
-	font-size: 1.75em;
-  text-align:center;
-  color:635f5d;
-  margin:0;
+
+#title h1 {
+  font-size: 1.75em;
+  text-align: center;
+  color: 635f5d;
+  margin: 0;
   margin-top: 1rem;
 }
 
 .copyright {
- 
+
   display: flex;
   align-items: center;
-  position:absolute;
+  position: absolute;
   height: 50px;
-  right: 10px;
- bottom: 0;
-  opacity:0.75;
-    transition: opacity 0.75s ease;
- 
+  right: 50px;
+  bottom: 0;
+  opacity: 0.75;
+  transition: opacity 0.75s ease;
+
 }
+
 .copyright:hover {
- opacity:1
+  opacity: 1
 }
+
 .copyright img {
   width: 25px;
   margin-left: 5px;
-  cursor:pointer;
+  cursor: pointer;
 }
