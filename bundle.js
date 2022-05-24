@@ -151,23 +151,23 @@
       return m;
     };
     var onMouseEnter = function (e, d) {
-      xScale(xValue(d));
-      var y = yScale(yValue(d));
+      var x = e.pageX - 100;
+      var y = e.pageY - 100;
 
-      e.pageX < window.innerWidth / 2 ? (y = y - 25) : y;
+      e.pageX > window.innerWidth / 2 ? (y -= 25) : y;
 
       tooldiv
         .style("visibility", "visible")
         .html(function () { return ((monthFormatting(xValue(d))) + "</br>" + (gdpFormatting(yValue(d)))); })
         .style("top", y + "px")
-        .style("left", e.pageX - 100 + "px")
+        .style("left", x + "px")
         .attr("data-date", yValue(d));
     };
     var onMouseOut = function (e) {
       tooldiv.style("visibility", "hidden");
     };
     return (
-      React__default["default"].createElement( React__default["default"].Fragment, null,
+      React__default["default"].createElement( 'div', { className: "svg-div" },
         React__default["default"].createElement( 'div', { id: "title" },
           React__default["default"].createElement( 'h1', null, "United States GDP [1947-2015]" )
         ),

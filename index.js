@@ -75,23 +75,23 @@ const App = () => {
     return m;
   };
   const onMouseEnter = (e, d) => {
-    let x = xScale(xValue(d));
-    let y = yScale(yValue(d));
+    let x = e.pageX - 100;
+    let y = e.pageY - 100;
 
-    e.pageX < window.innerWidth / 2 ? (y = y - 25) : y;
+    e.pageX > window.innerWidth / 2 ? (y -= 25) : y;
 
     tooldiv
       .style("visibility", "visible")
       .html(() => `${monthFormatting(xValue(d))}</br>${gdpFormatting(yValue(d))}`)
       .style("top", y + "px")
-      .style("left", e.pageX - 100 + "px")
+      .style("left", x + "px")
       .attr("data-date", yValue(d));
   };
   const onMouseOut = (e) => {
     tooldiv.style("visibility", "hidden");
   };
   return (
-    <>
+    <div className="svg-div">
       <div id="title">
         <h1>United States GDP [1947-2015]</h1>
       </div>
@@ -141,7 +141,7 @@ const App = () => {
           </a>
         </g>
       </svg>
-    </>
+    </div>
   );
 };
 
