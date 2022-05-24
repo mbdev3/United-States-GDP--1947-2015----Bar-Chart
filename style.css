@@ -19,13 +19,6 @@ pre {
   fill: #635f5d;
 }
 
-.mark path {
-  stroke: #bc2e21;
-  stroke-width: 5;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-
 .mark rect {
   fill: #b3c5ae;
 }
@@ -69,8 +62,4 @@ pre {
 
 .copyright:hover {
   opacity: 1;
-}
-
-.copyright img {
-  cursor: pointer;
 }
