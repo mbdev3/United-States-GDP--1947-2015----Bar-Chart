@@ -1,13 +1,14 @@
-# United States GDP \[1947-2015\] Bar Chart
-
+# United States GDP Bar Chart
 ---
 
-### :camera: ![Preview]: (https://projects-preview.s3.eu-west-3.amazonaws.com/United+States+GDP+bar+chart+mbdev.webp)
+### :camera: Preview: 
 
-### :rocket: **Stack:** [D3](https://d3js.org/), [React](https://reactjs.org/)
+<img src="https://projects-preview.s3.eu-west-3.amazonaws.com/United+States+GDP+bar+chart+mbdev.webp" width="800"  />
 
-### :hammer: **Module bandler:** [Rollupjs](https://rollupjs.org/guide/en/)
+:rocket: **Stack:** [D3](https://d3js.org/), [React](https://reactjs.org/)
 
-### :page_with_curl: [Data](https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json)
+:hammer: **Module bundler:** [Rollupjs](https://rollupjs.org/guide/en/)
 
-### :pushpin: [Live Demo](https://usgdp-mbdev.netlify.app/)
+:page_with_curl: [Data](https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json)
+
+:pushpin: [Live Demo](https://usgdp-mbdev.netlify.app/)
