@@ -1,7 +1,5 @@
 # United States GDP Bar Chart
----
 
-### :camera: Preview: 
 
 <img src="https://projects-preview.s3.eu-west-3.amazonaws.com/United+States+GDP+bar+chart+mbdev.webp" width="800"  />
 
